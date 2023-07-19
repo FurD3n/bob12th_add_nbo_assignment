@@ -18,7 +18,6 @@ int main(int argc, char *argv[]) {
 
     uint32_t num1, num2;
 
-    // Read 4 bytes from file1 and file2, and convert from network byte order to host byte order
     fread(&num1, sizeof(uint32_t), 1, file1);
     fread(&num2, sizeof(uint32_t), 1, file2);
     num1 = ntohl(num1);
@@ -27,10 +26,8 @@ int main(int argc, char *argv[]) {
     fclose(file1);
     fclose(file2);
 
-    // Calculate the sum
     uint32_t sum = num1 + num2;
 
-    // Print the result
     printf("%u(0x%x) + %u(0x%x) = %u(0x%x)\n", num1, num1, num2, num2, sum, sum);
 
     return 0;
